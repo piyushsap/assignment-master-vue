@@ -4,7 +4,7 @@
             <Content :as="'h2'">{{heading}}</Content>
         </div>
         <div class="card-body">
-            <slot>{{check}}</slot>
+            <slot></slot>
         </div>
         <div class="card-footer" v-if="btn">
             <Button

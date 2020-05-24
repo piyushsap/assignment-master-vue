@@ -7,11 +7,6 @@ export default Vue.extend({
         btn: Object,
         heading: String,
     },
-    computed:{
-        check(){
-            return null
-        }
-    },
     components:{
         Button, 
         Content
