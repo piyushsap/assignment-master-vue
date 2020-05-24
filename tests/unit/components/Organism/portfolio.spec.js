@@ -9,35 +9,29 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe("stock.vue", () => {
-    let actions
-    let state
-    let store
-    beforeEach(() => {
-        state = {
-            funds: 1200,
-            stocks: [{ id: 1, name: "Kia", price: 100 }]
-        }
-    
-        actions = {
-            randomizeStock: jest.fn(),
-            loadPortfolio : jest.fn()
-        }
-    
-        store = new Vuex.Store({
-          modules: {
-            myModule: {
-              state,
-              actions,
-              getters: portfolio.getters
-            }
-          }
-        })
+  let actions
+  let state
+  let store
+  let getters
+  beforeEach(() => {
+      actions = {
+          sellStock: jest.fn(),
+      }
+      store = new Vuex.Store({
+          actions,
       })
-    it("Textbox emitting value on input", () => {
-        const wrapper = mount(stock, { store, localVue },{
-            propsData:{
-                stock : { id: 1, name: "Kia", price: 100 }            }
-        });
-        console.log(wrapper);
-    })
+  })
+  it("Textbox emitting value on input", () => {
+    const wrapper = mount(stock, {
+      propsData: {
+        stock: { id: 1, name: "Kia", price: 100 }
+      },
+      store,
+      localVue
+    });
+    wrapper.find('input').setValue('2');
+    wrapper.find('button').trigger('click');
+
+    expect(actions.sellStock).toHaveBeenCalled()
+  })
 })

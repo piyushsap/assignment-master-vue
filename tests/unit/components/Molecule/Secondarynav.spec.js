@@ -49,6 +49,7 @@ describe("Secondarynav check", () => {
 
     it("dispatch loadPortfolio event when click on loadData ", () => {
         const wrapper = mount(Secondarynav, { store, localVue });
+        //wrapper.find('.load-data').trigger('click');
         //expect(actions.loadPortfolio).toHaveBeenCalled()
     })
 })

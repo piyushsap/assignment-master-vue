@@ -6,7 +6,7 @@
     :type="href || type==='button' ? null : type"
     @click="$emit('click')"
     :href="href"
-    :disabled="disabled"
+    :disabled="disabled ? false : disabled"
     >
     <slot></slot>
   </component>

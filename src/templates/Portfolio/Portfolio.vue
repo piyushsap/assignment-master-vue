@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="row">
-      {{stocks}}
     <app-stock v-for="stock in stocks" :stock="stock" :key="stock.id"></app-stock>
     </div>
   </div>
