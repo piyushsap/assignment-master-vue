@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Stock from "../../components/Organism/portfolio/stock";
+import Stock from "../../components/Organism/portfolio/stock.vue";
 import { mapGetters } from "vuex";
 export default Vue.extend({
   components: {
